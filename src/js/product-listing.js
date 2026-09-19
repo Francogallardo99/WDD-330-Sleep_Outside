@@ -9,7 +9,7 @@ const dataSource = new ProductData(actualCategory);
 const listElement = document.querySelector(".product-list");
 
 const productTitle = document.querySelector("h2");
-productTitle.textContent = "Top Products: " + actualCategory;
+productTitle.textContent = "Top Products: " + actualCategory.charAt(0).toUpperCase() + actualCategory.slice(1);
 
 const productList = new ProductList(actualCategory, dataSource, listElement);
 

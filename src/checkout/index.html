@@ -17,6 +17,25 @@
     <section class="products">
       <h2>Review & Place your Order</h2>
     </section>
+    <form action="post" method="post" class="form">
+      <input type="hidden" name="orderDate" value="" />
+      <input type="text" name="fname" placeholder="Enter your first name" required />
+      <input type="text" name="lname" placeholder="Enter your last name" required />
+      <input type="text" name="street" placeholder="Enter your street address" required />
+      <input type="text" name="city" placeholder="Enter your city" required />
+      <input type="text" name="state" placeholder="Enter your state" required />
+      <input type="text" name="zip" placeholder="Enter your zip code" required />
+      <input type="text" name="cardNumber" placeholder="Enter your credit card number" required />
+      <input type="text" name="expiration" placeholder="Enter your credit card expiration date" required />
+      <input type="text" name="code" placeholder="Enter your credit card security code" required />
+      <button type="submit">Place Order</button>
+    </form>
+    <div id="orderItems">
+      <p id="subTotal">Subtotal: </p>
+      <p id="tax">Tax: </p>
+      <p id="shipping">Shipping: </p>
+      <p id="orderTotal">Total: </p>
+    </div>
   </main>
 
   <footer id="main-footer"></footer>

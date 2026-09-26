@@ -20,13 +20,7 @@ checkoutForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const valid = checkoutForm.checkValidity()
     if (valid == true) {
-        try {
             await checkout.checkout(checkoutForm);
-            localStorage.setItem("so-cart", "[]");
-            window.location.href = "success.html";
-        } catch (error) {
-            alertMessage(error.message);
-        }
     }
     else {
         checkoutForm.reportValidity()

@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage, updateCartCount } from "./utils.mjs";
+import { setLocalStorage, getLocalStorage, updateCartCount, alertMessage } from "./utils.mjs";
 
 export default class ProductDetails {
     constructor(productId, dataSource) {
@@ -18,6 +18,12 @@ export default class ProductDetails {
         if (!Array.isArray(cart)) {
             cart = [];
         }
+        const cartAnimation = document.querySelector(".cart");
+        cartAnimation.classList.add("animationBag");
+        setTimeout(() => {
+            cartAnimation.classList.remove("animationBag")
+        }, 1000);
+        alertMessage("Product successfully added");
         cart.push(this.product);
         setLocalStorage("so-cart", cart);
 

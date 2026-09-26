@@ -323,3 +323,50 @@ footer {
   background-color: #c9302c;
   transform: scale(1.1);
 }
+
+.alert {
+  background-color: var(--primary-color);
+  padding: 5px;
+  margin: 1em;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+
+  input {
+    padding: 10px;
+    border: 1px solid var(--dark-grey);
+    font-family: var(--font-body);
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+    }
+  }
+}
+
+@keyframes bag {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animationBag {
+  animation: bag 1s ease-in-out;
+}

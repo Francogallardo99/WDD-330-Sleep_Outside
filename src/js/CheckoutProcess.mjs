@@ -1,4 +1,4 @@
-import { getLocalStorage, alertMessage } from "./utils.mjs";
+import { getLocalStorage, alertMessage, setLocalStorage } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 const services = new ExternalServices();
@@ -68,6 +68,8 @@ export default class CheckoutProcess {
         formData.items = this.packageItems(this.list);
         try {
             const response = await services.checkout(formData);
+            setLocalStorage(this.key, []);
+            window.location.assign("/checkout/success.html");
         }
         catch (err) {
             const errorMessages = Object.values(err.message);

@@ -26,9 +26,12 @@
       <input type="text" name="city" placeholder="Enter your city" required />
       <input type="text" name="state" placeholder="Enter your state" required />
       <input type="text" minlength="3" maxlength="10" name="zip" placeholder="Enter your zip code" required />
-      <input type="text" minlength="13" maxlength="19" name="cardNumber" placeholder="Enter your credit card number" required />
-      <input type="text" pattern="[0-9]*" minlength="4" maxlength="4" name="expiration" placeholder="Expiration cart MMYY" required />
-      <input type="text" minlength="3" maxlength="4" name="code" placeholder="Enter your credit card security code" required />
+      <input type="text" minlength="13" maxlength="19" pattern="[0-9]*" name="cardNumber"
+        placeholder="Enter your credit card number" required />
+      <input type="text" pattern="[0-9]*" minlength="4" maxlength="4" name="expiration"
+        placeholder="Expiration cart MMYY" required />
+      <input type="text" minlength="3" maxlength="4" name="code" placeholder="Enter your credit card security code"
+        required />
       <button type="submit">Process Order</button>
     </form>
     <div id="orderItems">

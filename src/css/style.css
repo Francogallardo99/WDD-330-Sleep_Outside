@@ -325,11 +325,12 @@ footer {
 }
 
 .alert {
-  background-color: var(--tertiary-color);
+  background-color: var(--primary-color);
   padding: 5px;
-  margin: 2em;
+  margin: 1em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  border-radius: 10px;
 }
 
 .form {

@@ -1,4 +1,4 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage, alertMessage } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 const services = new ExternalServices();
@@ -66,8 +66,12 @@ export default class CheckoutProcess {
 
         formData.orderDate = new Date().toISOString();
         formData.items = this.packageItems(this.list);
-
-        const response = await services.checkout(formData);
+        try {
+            const response = await services.checkout(formData);
+        }
+        catch (err) {
+            alertMessage(err.message);
+        }
     }
 }
 

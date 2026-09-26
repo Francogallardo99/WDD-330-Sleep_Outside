@@ -23,7 +23,7 @@ export default class ProductDetails {
         setTimeout(() => {
             cartAnimation.classList.remove("animationBag")
         }, 1000);
-        alertMessage("product successfully added");
+        alertMessage("Product successfully added");
         cart.push(this.product);
         setLocalStorage("so-cart", cart);
 

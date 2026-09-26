@@ -71,6 +71,7 @@ export default class CheckoutProcess {
         }
         catch (err) {
             alertMessage(err.message);
+            console.log(err.message)
         }
     }
 }

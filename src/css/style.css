@@ -324,7 +324,7 @@ footer {
   transform: scale(1.1);
 }
 
-.alert{
+.alert {
   background-color: var(--tertiary-color);
   padding: 5px;
   margin: 2em;
@@ -332,18 +332,20 @@ footer {
   justify-content: space-between;
 }
 
-.form{
+.form {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
-  input{
+
+  input {
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid var(--dark-grey);
     font-family: var(--font-body);
     font-size: 1rem;
-    &:focus{
+
+    &:focus {
       outline: none;
       border-color: var(--secondary-color);
     }

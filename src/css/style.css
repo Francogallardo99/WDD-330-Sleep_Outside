@@ -323,3 +323,29 @@ footer {
   background-color: #c9302c;
   transform: scale(1.1);
 }
+
+.alert{
+  background-color: var(--tertiary-color);
+  padding: 5px;
+  margin: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form{
+  display: flex;
+  flex-direction:column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  input{
+    padding: 10px;
+    border: 1px solid black;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    &:focus{
+      outline: none;
+      border-color: var(--secondary-color);
+    }
+  }
+}

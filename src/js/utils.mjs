@@ -93,7 +93,8 @@ export function alertMessage(message, scroll = true) {
   closeButton.addEventListener("click", (event) => {
     errorMessage.remove();
   })
-  const validation = document.querySelector("#validationError");
+  errorMessage.classList.add("alert")
+  const validation = document.querySelector("main");
   validation.prepend(errorMessage);
   if (scroll) {
     window.scrollTo(0, 0);

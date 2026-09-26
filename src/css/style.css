@@ -370,3 +370,10 @@ footer {
 .animationBag {
   animation: bag 1s ease-in-out;
 }
+
+.proceed{
+  background-color: var(--primary-color);
+  margin: 10px;
+  border-radius: 10px;
+  border: solid var(--secondary-color) 2px;
+}

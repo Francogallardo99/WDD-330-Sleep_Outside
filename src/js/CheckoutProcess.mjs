@@ -23,7 +23,7 @@ export default class CheckoutProcess {
         this.list.forEach((item) => {
             this.itemTotal += item.FinalPrice;
         });
-        const itemTotalElement = document.querySelector(`${this.outputSelector} #subtotal`);
+        const itemTotalElement = document.querySelector(`${this.outputSelector} #subTotal`);
         itemTotalElement.innerText = `Subtotal: $${this.itemTotal.toFixed(2)}`;
     }
 
@@ -63,7 +63,7 @@ export default class CheckoutProcess {
         formData.orderTotal = this.orderTotal;
         formData.shipping = this.shipping;
         formData.tax = this.tax;
-    
+
         formData.orderDate = new Date().toISOString();
         formData.items = this.packageItems(this.list);
 

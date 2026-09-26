@@ -1,5 +1,6 @@
 import { loadHeaderFooter } from "./utils.mjs";
 import CheckoutProcess from "./CheckoutProcess.mjs";
+import { alertMessage } from "./utils.mjs";
 
 const checkout = new CheckoutProcess("so-cart", "#orderItems");
 
@@ -16,13 +17,20 @@ zipInput.addEventListener("input", () => {
 const checkoutForm = document.querySelector(".form");
 
 checkoutForm.addEventListener("submit", async (event) => {
-    try {
-        event.preventDefault();
-        await checkout.checkout(checkoutForm);
-        localStorage.setItem("so-cart", "[]");
-        window.location.href = "success.html";
-    } catch (error) {
-        alert(`Error during checkout: ${error.message}`);    }
-});
+    event.preventDefault();
+    const valid = checkoutForm.checkValidity()
+    if (valid == true) {
+        try {
+            await checkout.checkout(checkoutForm);
+            localStorage.setItem("so-cart", "[]");
+            window.location.href = "success.html";
+        } catch (error) {
+            alertMessage(error.message);
+        }
+    }
+    else {
+        checkoutForm.reportValidity()
+    }
+}); 
 
 loadHeaderFooter();

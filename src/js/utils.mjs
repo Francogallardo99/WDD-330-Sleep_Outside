@@ -82,3 +82,20 @@ export function updateCartCount() {
     }
   }
 }
+
+export function alertMessage(message, scroll = true) {
+  const errorMessage = document.createElement("p");
+  const closeButton = document.createElement ("button")
+  errorMessage.innerText = message;
+  closeButton.innerText = "X";
+  errorMessage.append(closeButton);
+
+  closeButton.addEventListener("click", (event) => {
+    errorMessage.remove();
+  })
+  const validation = document.querySelector("#validationError");
+  validation.prepend(errorMessage);
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
+}

@@ -70,8 +70,8 @@ export default class CheckoutProcess {
             const response = await services.checkout(formData);
         }
         catch (err) {
-            alertMessage(err.message);
-            console.log(err.message)
+            const errorMessages = Object.values(err.message);
+            errorMessages.forEach((message) => alertMessage(message));
         }
     }
 }
